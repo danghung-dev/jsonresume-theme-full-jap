@@ -3,7 +3,7 @@
   {{#each resume.work}}
   <section class="item">
     {{#if @first}}
-    <h2>Experience</h2>
+    <h2>職歴</h2>
     {{/if}}
     <header>
       {{#if url}}
@@ -15,17 +15,13 @@
       {{#if position}}
       <span class="position">{{position}}</span>
       {{/if}}
-      {{#if noDate}}
-        <small>N/A</small>
+      {{#if startDate}}
+      <small class="dates">{{date startDate}}
+      {{/if}}
+      {{#if endDate}}
+       - {{date endDate}}</small>
       {{else}}
-        {{#if startDate}}
-            <small class="dates">{{date startDate}}
-        {{/if}}
-        {{#if endDate}}
-            - {{date endDate}}</small>
-        {{else}}
-        - Present</small>
-        {{/if}}
+       - Present</small>
       {{/if}}
       </div>
     </header>
